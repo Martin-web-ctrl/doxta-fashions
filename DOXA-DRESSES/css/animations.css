@@ -1,0 +1,113 @@
+/* ==========================================
+   DOXA DRESSES - Fluid Animations & Shine
+   ========================================== */
+
+/* Silk Background Waves */
+.satin-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 1;
+    background: linear-gradient(135deg, #F7F4EF 0%, #EFECE6 100%);
+}
+
+.silk-wave {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    opacity: 0.4;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.8) 0%, rgba(217,212,204,0.2) 40%, transparent 70%);
+    animation: silkFlow 18s ease-in-out infinite alternate;
+}
+
+.silk-wave.wave-2 {
+    animation-duration: 24s;
+    animation-direction: alternate-reverse;
+    opacity: 0.25;
+    background: radial-gradient(circle at center, rgba(200,169,106,0.15) 0%, rgba(255,255,255,0.4) 50%, transparent 70%);
+}
+
+@keyframes silkFlow {
+    0% {
+        transform: translate(-10%, -10%) rotate(0deg) scale(1);
+    }
+    50% {
+        transform: translate(10%, 15%) rotate(5deg) scale(1.05);
+    }
+    100% {
+        transform: translate(-5%, 10%) rotate(-5deg) scale(1);
+    }
+}
+
+/* Gentle Logo Float */
+.floating-animation {
+    animation: logoFloat 6s ease-in-out infinite;
+}
+
+@keyframes logoFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* Page Fade In */
+@keyframes fadeInPage {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Liquid Button Shine Sweep */
+.btn-shine {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.15),
+        transparent
+    );
+    animation: liquidShine 4s ease-in-out infinite;
+}
+
+.btn-white .btn-shine {
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.6),
+        transparent
+    );
+}
+
+@keyframes liquidShine {
+    0% {
+        left: -100%;
+    }
+    20% {
+        left: 100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* Tap Shrink Effect handled via JS class active */
+.tap-effect:active, .tap-effect.is-active {
+    transform: scale(0.96) !important;
+}
